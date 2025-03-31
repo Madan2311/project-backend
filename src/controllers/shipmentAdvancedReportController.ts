@@ -18,7 +18,6 @@ export const getAdvancedShipmentReportController = async (req: Request, res: Res
         };
 
         const report = await fetchAdvancedShipmentReport(filters);
-        console.log("Report fetched:", report);
         res.status(200).json({ report });
     } catch (error: any) {
         res.status(400).json({ error: error.message });

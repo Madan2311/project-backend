@@ -1,6 +1,5 @@
 import pool from "../config/database";
 
-// Función para obtener envíos con filtros avanzados
 export const getShipmentReport = async (filters: {
   startDate?: string;
   endDate?: string;

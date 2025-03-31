@@ -12,14 +12,10 @@ export const fetchAdvancedShipmentReport = async (filters: {
 
   const cachedData = await redisClient.get(cacheKey);
   if (cachedData) {
-    console.log("Report cache hit for key:", cacheKey);
     return JSON.parse(cachedData);
   }
-  console.log("filters", filters);
   const report = await getAdvancedShipmentReport(filters);
 
   await redisClient.setEx(cacheKey, 60, JSON.stringify(report));
-  console.log("Report cache set for key:", cacheKey);
-
   return report;
 };

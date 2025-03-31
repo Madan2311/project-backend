@@ -34,9 +34,6 @@ export const getAdvancedShipmentReport = async (filters: {
         sql += ` LIMIT ${pageSize} OFFSET ${offset}`;
     }
 
-    console.log("SQL:", sql);
-    console.log("Params:", params);
-
     const [rows] = await pool.execute(sql, params);
     return rows;
 };

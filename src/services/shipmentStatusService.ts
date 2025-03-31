@@ -7,7 +7,6 @@ export const updateShipmentStatus = async (shipmentId: number, newStatus: string
     await redisClient.set(`shipment:${shipmentId}:current`, newStatus);
     await redisClient.lPush(`shipment:${shipmentId}:history`, newStatus);
     const io = getSocketServerInstance();
-    console.log(`Emitiendo shipmentStatusUpdated para envío ${shipmentId} con estado ${newStatus}`);
     io.to(`shipment_${shipmentId}`).emit("shipmentStatusUpdated", { shipmentId, newStatus });
 };
 
