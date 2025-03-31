@@ -50,7 +50,7 @@ Requisitos Previos
 
 Pasos para Instalar el Proyecto
 
-Clona el repositorio: git clone https://github.com/tuusuario/project-backend.git
+Clona el repositorio: git clone https://github.com/Madan2311/project-backend.git
 
 cd project-backend
 
